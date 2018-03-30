@@ -156,6 +156,19 @@ input("Aperte Enter para continuar...")
 # TODO: Crie um gráfico similar para user_types. Tenha certeza que a legenda está correta.
 print("\nTAREFA 7: Verifique o gráfico!")
 
+user_types_list = column_to_list(data_list, -3)
+types = ["Customer", "Subscriber"]
+quantity = [user_types_list.count("Customer"), user_types_list.count("Subscriber") ]
+
+print("Customer: {}\n Subscriber:{}".format(quantity[0], quantity[1]))
+
+y_pos = list(range(len(types)))
+plt.bar(y_pos, quantity)
+plt.ylabel('Quantidade')
+plt.xlabel('Tipos de usuários')
+plt.xticks(y_pos, types)
+plt.title('Quantidade por Tipo de usuário')
+plt.show(block=True)
 
 input("Aperte Enter para continuar...")
 # TAREFA 8
