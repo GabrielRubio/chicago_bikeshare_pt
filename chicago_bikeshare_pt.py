@@ -75,11 +75,15 @@ input("Aperte Enter para continuar...")
 # TODO: Conte cada gênero. Você não deveria usar uma função parTODO isso.
 male = 0
 female = 0
-
+gender_list = column_to_list(data_list, -2)
+male = gender_list.count('Male')
+female = gender_list.count('Female')
+vazio = gender_list.count('')
 
 # Verificando o resultado
 print("\nTAREFA 4: Imprimindo quantos masculinos e femininos nós encontramos")
 print("Masculinos: ", male, "\nFemininos: ", female)
+print('Teste - quantidade de generos faltando: ' + str(vazio))
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
 assert male == 935854 and female == 298784, "TAREFA 4: A conta não bate."
