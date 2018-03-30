@@ -160,7 +160,7 @@ user_types_list = column_to_list(data_list, -3)
 types = ["Customer", "Subscriber"]
 quantity = [user_types_list.count("Customer"), user_types_list.count("Subscriber") ]
 
-print("Customer: {}\n Subscriber:{}".format(quantity[0], quantity[1]))
+print("Customer: {}\nSubscriber:{}".format(quantity[0], quantity[1]))
 
 y_pos = list(range(len(types)))
 plt.bar(y_pos, quantity)
@@ -176,7 +176,7 @@ input("Aperte Enter para continuar...")
 male, female = count_gender(data_list)
 print("\nTAREFA 8: Por que a condição a seguir é Falsa?")
 print("male + female == len(data_list):", male + female == len(data_list))
-answer = "Escreva sua resposta aqui."
+answer = "Por que existem {} amostras sem a informação de genêro.".format(vazio)
 print("resposta:", answer)
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
