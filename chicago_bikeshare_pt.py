@@ -193,7 +193,24 @@ min_trip = 0.
 max_trip = 0.
 mean_trip = 0.
 median_trip = 0.
+min_trip = float(trip_duration_list[0])
+max_trip = float(trip_duration_list[0])
+sum_trip = 0
+trip_duration_list = list(map(float,trip_duration_list))
+for trip in trip_duration_list:
+    sum_trip += trip
+    if trip > max_trip:
+        max_trip = trip
+    if trip < min_trip:
+        min_trip = trip
+trip_duration_list_orden = sorted(trip_duration_list)
+length_list = len(trip_duration_list)
 
+# Deixando a saida arredondada
+max_trip = int(max_trip)
+min_trip = int(min_trip)
+mean_trip = round(sum_trip/length_list)
+median_trip = int(trip_duration_list_orden[length_list // 2])
 
 print("\nTAREFA 9: Imprimindo o mínimo, máximo, média, e mediana")
 print("Min: ", min_trip, "Max: ", max_trip, "Média: ", mean_trip, "Mediana: ", median_trip)
@@ -209,7 +226,7 @@ input("Aperte Enter para continuar...")
 # TAREFA 10
 # Gênero é fácil porque nós temos apenas algumas opções. E quanto a start_stations? Quantas opções ele tem?
 # TODO: Verifique quantos tipos de start_stations nós temos, usando set()
-user_types = set()
+user_types = set(column_to_list(data_list, 3))
 
 print("\nTAREFA 10: Imprimindo as start stations:")
 print(len(user_types))
