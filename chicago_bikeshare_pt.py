@@ -277,11 +277,25 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar tipos de usuários, sem definir os tipos
 # para que nós possamos usar essa função com outra categoria de dados.
 print("Você vai encarar o desafio? (yes ou no)")
-answer = "no"
+answer = "yes"
 
 def count_items(column_list):
+    """
+    Função que conta quantos itens diferentes tem em uma lista, sem ser necessario definir os itens.
+      Argumentos:
+          column_list: A lista de itens (list).
+      Retorna:
+          Uma tupla (item_types, count_items):
+                item_types - os tipos diferentes de itens na lista.
+                count_items - quantidade de cada itens na lista.
+    """
+    items_set = set(column_list)
+    # print(items_set)
     item_types = []
     count_items = []
+    for item in items_set:
+        item_types.append(item)
+        count_items.append(column_list.count(item))
     return item_types, count_items
 
 
