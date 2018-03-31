@@ -42,7 +42,7 @@ input("Aperte Enter para continuar...")
 # TODO: Imprima o `gênero` das primeiras 20 linhas
 print("\nTAREFA 2: Imprimindo o gênero das primeiras 20 amostras")
 for i, data in enumerate(data_list[:20]):
-    print("Linha {} -> genero {}".format(i + 1, data[6]))
+    print("Linha {} -> genêro {}".format(i + 1, data[6]))
 
 
 # Ótimo! Nós podemos pegar as linhas(samples) iterando com um for, e as colunas(features) por índices.
@@ -91,7 +91,7 @@ vazio = gender_list.count('')
 # Verificando o resultado
 print("\nTAREFA 4: Imprimindo quantos masculinos e femininos nós encontramos")
 print("Masculinos: ", male, "\nFemininos: ", female)
-print('Teste - quantidade de generos faltando: ' + str(vazio))
+print('Quantidade de amostras com genêros faltando: ' + str(vazio))
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
 assert male == 935854 and female == 298784, "TAREFA 4: A conta não bate."
@@ -281,13 +281,13 @@ answer = "yes"
 
 def count_items(column_list):
     """
-    Função que conta quantos itens diferentes tem em uma lista, sem ser necessario definir os itens.
+    Função que conta a ocorrência de cada item diferente em uma lista, sem ser necessário definir os itens.
       Argumentos:
           column_list: A lista de itens (list).
       Retorna:
           Uma tupla (item_types, count_items):
                 item_types - os tipos diferentes de itens na lista.
-                count_items - quantidade de cada itens na lista.
+                count_items - quantidade de cada tipo de itens na lista.
     """
     items_set = set(column_list)
     # print(items_set)
