@@ -180,10 +180,10 @@ input("Aperte Enter para continuar...")
 print("\nTAREFA 7: Verifique o gráfico!")
 
 user_types_list = column_to_list(data_list, -3)
-types = ["Customer", "Subscriber"]
-quantity = [user_types_list.count("Customer"), user_types_list.count("Subscriber") ]
+types = ["Customer", "Dependent", "Subscriber"]
+quantity = [user_types_list.count("Customer"), user_types_list.count("Dependent"), user_types_list.count("Subscriber") ]
 
-print("Customer: {}\nSubscriber:{}".format(quantity[0], quantity[1]))
+print("Customer:{}\nDependent:{}\nSubscriber:{}".format(quantity[0], quantity[1], quantity[2]))
 
 y_pos = list(range(len(types)))
 plt.bar(y_pos, quantity)
