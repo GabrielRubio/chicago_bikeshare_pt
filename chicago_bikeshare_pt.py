@@ -52,6 +52,14 @@ input("Aperte Enter para continuar...")
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 def column_to_list(data, index):
+    """
+    Função que adiciona as colunas(features) de uma lista em outra lista, na mesma ordem.
+      Argumentos:
+          data: A lista de dados (list).
+          index: O indice da coluna (int).
+      Retorna:
+          Uma lista com os valores da coluna escolhida pelo indice 'index'
+    """
     column_list = []
     # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
     for sample in data:
@@ -95,6 +103,13 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 def count_gender(data_list):
+    """
+    Função que conta a quantidade de cada gênero em uma lista.
+      Argumentos:
+          data_list: A lista de gêneros (list).
+      Retorna:
+          Uma lista com as quantidades de homem e mulher, no formato [qntd_male, qntd_female].
+    """
     male = 0
     female = 0
     for data in data_list:
@@ -120,6 +135,14 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 def most_popular_gender(data_list):
+    """
+    Função que retorna o genêro mais popular de uma lista de genêros.
+      Argumentos:
+          data_list: lista de genêros (list).
+      Retorna:
+          Uma string com o genêro mais popular:
+          "Male" caso o masculino, "Female" caso o feminino e "Equal" caso iguais.
+    """
     answer = ""
     count_g = count_gender(data_list)
     if count_g[0] > count_g[1]:
