@@ -42,7 +42,7 @@ input("Aperte Enter para continuar...")
 # TODO: Imprima o `gênero` das primeiras 20 linhas
 print("\nTAREFA 2: Imprimindo o gênero das primeiras 20 amostras")
 for i, data in enumerate(data_list[:20]):
-    print("Linha {} -> genêro {}".format(i + 1, data[6]))
+    print("Linha {} -> gênero {}".format(i + 1, data[6]))
 
 
 # Ótimo! Nós podemos pegar as linhas(samples) iterando com um for, e as colunas(features) por índices.
@@ -91,7 +91,7 @@ vazio = gender_list.count('')
 # Verificando o resultado
 print("\nTAREFA 4: Imprimindo quantos masculinos e femininos nós encontramos")
 print("Masculinos: ", male, "\nFemininos: ", female)
-print('Quantidade de amostras com genêros faltando: ' + str(vazio))
+print('Quantidade de amostras com gêneros faltando: ' + str(vazio))
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
 assert male == 935854 and female == 298784, "TAREFA 4: A conta não bate."
@@ -136,11 +136,11 @@ input("Aperte Enter para continuar...")
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 def most_popular_gender(data_list):
     """
-    Função que retorna o genêro mais popular de uma lista de genêros.
+    Função que retorna o gênero mais popular de uma lista de gêneros.
       Argumentos:
-          data_list: lista de genêros (list).
+          data_list: lista de gêneros (list).
       Retorna:
-          Uma string com o genêro mais popular:
+          Uma string com o gênero mais popular:
           "Male" caso o masculino, "Female" caso o feminino e "Equal" caso iguais.
     """
     answer = ""
@@ -199,7 +199,7 @@ input("Aperte Enter para continuar...")
 male, female = count_gender(data_list)
 print("\nTAREFA 8: Por que a condição a seguir é Falsa?")
 print("male + female == len(data_list):", male + female == len(data_list))
-answer = "Por que existem {} amostras sem a informação de genêro.".format(vazio)
+answer = "Por que existem {} amostras sem a informação de gênero.".format(vazio)
 print("resposta:", answer)
 
 # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
@@ -216,20 +216,28 @@ min_trip = 0.
 max_trip = 0.
 mean_trip = 0.
 median_trip = 0.
+
+# Iniciando as variáveis 
 min_trip = float(trip_duration_list[0])
 max_trip = float(trip_duration_list[0])
 sum_trip = 0
+
+# Fazendo os elementos da lista virarem float
 trip_duration_list = list(map(float,trip_duration_list))
+
+# Buscando max, min e realizando a soma
 for trip in trip_duration_list:
     sum_trip += trip
     if trip > max_trip:
         max_trip = trip
     if trip < min_trip:
         min_trip = trip
+
+# Ordenando para achar o mediana, também poderia ser usada para achar o min e max, pegando o primeiro e último elemento.
 trip_duration_list_orden = sorted(trip_duration_list)
 length_list = len(trip_duration_list)
 
-# Deixando a saida arredondada
+# Arredondando a saída
 max_trip = int(max_trip)
 min_trip = int(min_trip)
 mean_trip = round(sum_trip/length_list)
