@@ -217,7 +217,7 @@ max_trip = 0.
 mean_trip = 0.
 median_trip = 0.
 
-# Iniciando as variáveis 
+# Iniciando as variáveis
 min_trip = float(trip_duration_list[0])
 max_trip = float(trip_duration_list[0])
 sum_trip = 0
@@ -316,3 +316,22 @@ if answer == "yes":
     assert len(types) == 3, "TAREFA 11: Há 3 tipos de gênero!"
     assert sum(counts) == 1551505, "TAREFA 11: Resultado de retorno incorreto!"
     # -----------------------------------------------------
+
+input("Aperte Enter para continuar...")
+# TAREFA EXTRA
+# TODO: Mostre as 5 start_stations mais populares, ou seja, as start_stations
+# que tem maior quantidade de usuarios saindo dela
+start_stations_list =  column_to_list(data_list, 3)
+stations, quantity = count_items(start_stations_list)
+start_stations_count = list(zip(quantity, stations))
+start_stations_count = sorted(start_stations_count)
+top5 = start_stations_count[-5:]
+quantity, stations = zip(*top5)
+
+y_pos = list(range(len(stations)))
+plt.bar(y_pos, quantity)
+plt.ylabel('Quantidade')
+plt.xlabel('Estações de partida')
+plt.xticks(y_pos, stations)
+plt.title('Quantidade por Estação')
+plt.show(block=True)
