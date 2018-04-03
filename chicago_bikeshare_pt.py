@@ -317,8 +317,9 @@ if answer == "yes":
     assert sum(counts) == 1551505, "TAREFA 11: Resultado de retorno incorreto!"
     # -----------------------------------------------------
 
+
 input("Aperte Enter para continuar...")
-print("TAREFA EXTRA: Mostrando as 5 estações mais visitadas")
+print("\nTAREFA EXTRA: Mostrando as 5 estações mais visitadas")
 # TAREFA EXTRA
 # TODO: Mostre as 5 start_stations mais populares, ou seja, as start_stations
 # que tem maior quantidade de usuarios saindo dela
@@ -329,9 +330,9 @@ start_stations_count = sorted(start_stations_count, reverse=True)
 top5 = start_stations_count[:5]
 quantity, stations = zip(*top5)
 
-print('As 5 estações de saida com maior frenquência de usuarios')
+print('As 5 estações de saida com maior frenquência de usuários são)
 for i, station in enumerate(stations):
-    print('{} - {}̣\n'.format(i,station))
+    print('{} - {}'.format(i+1, station))
 
 y_pos = list(range(len(stations)))
 plt.bar(y_pos, quantity)
