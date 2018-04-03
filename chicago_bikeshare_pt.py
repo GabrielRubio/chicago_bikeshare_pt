@@ -318,15 +318,20 @@ if answer == "yes":
     # -----------------------------------------------------
 
 input("Aperte Enter para continuar...")
+print("TAREFA EXTRA: Mostrando as 5 estações mais visitadas")
 # TAREFA EXTRA
 # TODO: Mostre as 5 start_stations mais populares, ou seja, as start_stations
 # que tem maior quantidade de usuarios saindo dela
 start_stations_list =  column_to_list(data_list, 3)
 stations, quantity = count_items(start_stations_list)
 start_stations_count = list(zip(quantity, stations))
-start_stations_count = sorted(start_stations_count)
-top5 = start_stations_count[-5:]
+start_stations_count = sorted(start_stations_count, reverse=True)
+top5 = start_stations_count[:5]
 quantity, stations = zip(*top5)
+
+print('As 5 estações de saida com maior frenquência de usuarios')
+for i, station in enumerate(stations):
+    print('{} - {}̣\n'.format(i,station))
 
 y_pos = list(range(len(stations)))
 plt.bar(y_pos, quantity)
