@@ -233,18 +233,14 @@ trip_duration_list = list(map(float,trip_duration_list))
 # Buscando max, min e realizando a soma
 for trip in trip_duration_list:
     sum_trip += trip
-    if trip > max_trip:
-        max_trip = trip
-    if trip < min_trip:
-        min_trip = trip
 
 # Ordenando para achar o mediana, também poderia ser usada para achar o min e max, pegando o primeiro e último elemento.
 trip_duration_list_orden = sorted(trip_duration_list)
 length_list = len(trip_duration_list)
 
 # Arredondando a saída
-max_trip = int(max_trip)
-min_trip = int(min_trip)
+max_trip = round(trip_duration_list_orden[len(trip_duration_list_orden) - 1])
+min_trip = round(trip_duration_list_orden[0])
 mean_trip = round(sum_trip/length_list)
 median_trip = int(trip_duration_list_orden[length_list // 2])
 
