@@ -83,10 +83,15 @@ input("Aperte Enter para continuar...")
 # TODO: Conte cada gênero. Você não deveria usar uma função parTODO isso.
 male = 0
 female = 0
+vazio = 0
 gender_list = column_to_list(data_list, -2)
-male = gender_list.count('Male')
-female = gender_list.count('Female')
-vazio = gender_list.count('')
+for gender in gender_list:
+    if gender == "Male":
+        male += 1
+    elif gender == "Female":
+        female += 1
+    else:
+        vazio += 1
 
 # Verificando o resultado
 print("\nTAREFA 4: Imprimindo quantos masculinos e femininos nós encontramos")
@@ -330,7 +335,7 @@ start_stations_count = sorted(start_stations_count, reverse=True)
 top5 = start_stations_count[:5]
 quantity, stations = zip(*top5)
 
-print('As 5 estações de saida com maior frenquência de usuários são)
+print('As 5 estações de saida com maior frenquência de usuários são')
 for i, station in enumerate(stations):
     print('{} - {}'.format(i+1, station))
 
